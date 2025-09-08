@@ -29,10 +29,21 @@ console.log("Olá Mundo");
 // Nao utilize const, utilize let (ES6 - 2015)
 // Utilizamos const para valores que nao serao alterados
 */
-let nome = "Misaki";
-let idade = 22;
-let peso = 57;
-let altura = 1.75;
+const nome = "Misaki";//String
+let idade = 22; //Number
+let peso = 57;//Number
+let altura = 1.75;//Number
 let imc = peso / (altura * altura);
-console.log("${nome} tem ${idade} anos e seu imc é de ${imc}");
+console.log(`${nome} tem ${idade} anos e seu imc é de ${imc}`);
+let nomeAluno;// Undefined = Nao aponta para nenhum local na memoria
+const sobrenomeAluno = null;// Nulo = Nao aponta para nenhum local na memoriacon
+const aprovado = true;// Boolean = true, false 
 
+let a = 2;
+let b = a;
+a = 3;
+console.log(a, b);
+let numero = 5;
+let numero2 = 2;
+numero *= numero2; // numero = numero * numero2 
+console.log(numero);
