@@ -1,7 +1,9 @@
+/*
 console.log("Ola, 'mundo'!");
 console.log('Ola, "mundo"!');
 console.log(`"Ola", 'mundo'!`);
 console.log(`Meu nome é "Misaki" e tenho`, 22, `anos!`);
+*/
 // comentario de uma linha
 /* comentario de
 muitas linhas
@@ -29,6 +31,7 @@ console.log("Olá Mundo");
 // Nao utilize const, utilize let (ES6 - 2015)
 // Utilizamos const para valores que nao serao alterados
 */
+/*
 const nome = "Misaki";//String
 let idade = 22; //Number
 let peso = 57;//Number
@@ -47,3 +50,14 @@ let numero = 5;
 let numero2 = 2;
 numero *= numero2; // numero = numero * numero2 
 console.log(numero);
+*/
+const num1 = 10;
+const num2 = parseInt('5');// Number, claro se nao tiver string junto
+//parseInt() converte string para numero inteiro
+//parseFloat() converte string para numero decimal
+//Number() converte string para numero inteiro ou decimal
+console.log(num1 + num2);
+console.log(num1 - num2);
+console.log(num1 / num2);
+console.log(num1 * num2);
+console.log( typeof num2);

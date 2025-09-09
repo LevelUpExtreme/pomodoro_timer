@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA</title>
+</head>
+<body>
+    <script>
+        
+  const nome = prompt('Digite seu nome completo:');
+  document.body.innerHTML += `Seu nome é: ${nome}<br />`;
+  document.body.innerHTML += `Seu nome tem ${nome.length} letras <br />`;
+  document.body.innerHTML += `A segunda letra do seu nome é: ${nome.charAt}<br />`;
+  document.body.innerHTML += `Qual o primeiro índice da letra LETRA no seu nome? ${nome.indexOf}<br />`;
+  document.body.innerHTML += `Qual o último índice da letra LETRA no seu nome? ${nome.LastIndexOf}<br />`;
+  document.body.innerHTML += `As últimas 3 letras do seu nome são: ${nome.slice(-3)}<br />`;
+  document.body.innerHTML += `As palavras do seu nome são: ${nome.split}<br />`;
+  document.body.innerHTML += `Seu nome com letras maiúsculas: ${nome.toUpperCase}<br />`;
+  document.body.innerHTML += `Seu nome com letras minúsculas: ${nome.toLowerCase}<br />`;
+  /*
+  nome.length; // Quantidade de letras
+  nome.charAt(); // Retorna a letra na posição informada
+  nome.indexOf(); // Retorna o índice (posição) da letra informada
+    nome.lastIndexOf(); // Retorna o último índice (posição) da letra informada
+    nome.slice(); // Recorta a string de acordo com os valores informados
+    nome.split(); // Divide a string de acordo com o valor informado
+    nome.toUpperCase(); // Deixa a string toda em maiúsculo
+    nome.toLowerCase(); // Deixa a string toda em minúsculo
+    */
+    </script>
+</body>
+</html>
