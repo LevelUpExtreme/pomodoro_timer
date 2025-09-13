@@ -1,0 +1,52 @@
+Passo a passo (MVP → avançado)
+
+Defina requisitos (MVP)
+
+25 min foco, 5 min pausa.
+
+Botões: Iniciar, Pausar/Continuar, Resetar.
+
+Mostrar tempo (mm:ss).
+
+Estruture os arquivos
+
+/pomodoro
+  index.html
+  styles.css
+  app.js
+  /assets (sons opcionais)
+
+
+HTML semântico e acessível
+
+Use <main>, <button>, atributos aria-live="polite" para anunciar o tempo.
+
+CSS simples
+
+Layout centralizado, tipografia grande, estados dos botões.
+
+JS (lógica básica)
+
+setInterval de 1000 ms que decrementa os segundos.
+
+Controle de estado: idle | running | paused.
+
+Formatar tempo com padStart(2,'0').
+
+Testes rápidos
+
+Inicie, pause, continue, resete. Verifique mudança de sessão foco/pausa.
+
+Melhorias (quando o MVP estiver ok)
+
+Ciclos automáticos: 4 focos → pausa longa (15 min).
+
+Notificações do navegador.
+
+Som ao trocar de sessão.
+
+Salvar preferências no localStorage.
+
+Atalhos de teclado (Espaço iniciar/pausar, R reset).
+
+Título da aba mostrando o tempo.

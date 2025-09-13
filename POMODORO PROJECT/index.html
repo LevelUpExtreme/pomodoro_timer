@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POMODORO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'warm-beige': '#F5F5DC',
+                        'soft-beige': '#F7F3E9',
+                        'deep-red': '#DC2626',
+                        'soft-red': '#EF4444',
+                        'accent-red': '#B91C1C'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-gentle': 'bounce 2s infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'scale-in': 'scaleIn 0.3s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.95)' },
+                            '100%': { transform: 'scale(1)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(220, 38, 38, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(220, 38, 38, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-soft-beige via-warm-beige to-orange-50 font-sans">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <main class="w-full max-w-md">
+            <!-- Header -->
+            <header class="text-center mb-12 animate-fade-in">
+                <div class="relative">
+                    <h1 class="text-6xl font-bold text-deep-red mb-2 tracking-wider drop-shadow-lg">
+                        POMODORO
+                    </h1>
+                    <div class="absolute -inset-1 bg-gradient-to-r from-soft-red to-deep-red rounded-lg blur opacity-20 animate-pulse-slow"></div>
+                </div>
+                <p class="text-accent-red text-lg font-medium mt-4 opacity-80">
+                    Técnica de Produtividade
+                </p>
+            </header>
+
+            <!-- Timer Display -->
+            <div class="relative mb-12 animate-scale-in">
+                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/50 relative overflow-hidden">
+                    <!-- Background decoration -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-deep-red/5 to-soft-red/10 rounded-3xl"></div>
+                    
+                    <!-- Timer -->
+                    <div class="relative z-10">
+                        <div class="timer text-center" id="display" aria-live="polite">
+                            <div class="text-8xl font-mono font-bold text-deep-red tracking-wider animate-glow">
+                                25:00
+                            </div>
+                        </div>
+                        
+                        <!-- Progress bar -->
+                        <div class="mt-6 w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-soft-red to-deep-red rounded-full transition-all duration-1000 ease-out" style="width: 100%" id="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controles flex gap-4 justify-center animate-fade-in">
+                <button id="start" class="group relative px-8 py-4 bg-gradient-to-r from-deep-red to-soft-red text-white font-bold rounded-2xl shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95 focus:outline-none focus:ring-4 focus:ring-soft-red/50">
+                    <span class="relative z-10 tracking-wide">START</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-accent-red to-deep-red rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                </button>
+                
+                <button id="pause" class="group relative px-8 py-4 bg-white/90 text-deep-red font-bold rounded-2xl shadow-lg border-2 border-soft-red/30 transform transition-all duration-200 hover:scale-105 hover:shadow-xl hover:bg-soft-red/10 active:scale-95 focus:outline-none focus:ring-4 focus:ring-soft-red/50">
+                    <span class="relative z-10 tracking-wide">PAUSE</span>
+                </button>
+                
+                <button id="reset" class="group relative px-8 py-4 bg-gray-100 text-accent-red font-bold rounded-2xl shadow-lg border-2 border-gray-200 transform transition-all duration-200 hover:scale-105 hover:shadow-xl hover:bg-gray-50 active:scale-95 focus:outline-none focus:ring-4 focus:ring-gray-300/50">
+                    <span class="relative z-10 tracking-wide">RESET</span>
+                </button>
+            </div>
+
+            <!-- Info Section -->
+            <div class="mt-12 text-center animate-fade-in">
+                <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
+                    <h3 class="text-deep-red font-bold text-lg mb-2">Como funciona?</h3>
+                    <p class="text-accent-red/80 text-sm leading-relaxed">
+                        25 minutos de foco intenso seguidos de uma pausa de 5 minutos. 
+                        Após 4 ciclos, faça uma pausa mais longa de 15-30 minutos.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
